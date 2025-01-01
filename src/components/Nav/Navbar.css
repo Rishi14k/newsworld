@@ -1,0 +1,105 @@
+
+.navbar-container {
+  width: 100%;
+  background-color: #dd2020;
+  z-index: 10;  /* Ensure navbar stays on top */
+  position: relative;
+  margin: 13px;
+  border-radius: 5px;
+}
+
+/* Navbar Styling */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+/* Logo */
+.logo a {
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Navbar Links */
+.nav-links {
+  display: flex;
+  list-style: none;
+}
+
+.nav-links ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.nav-links li {
+  margin: 0 15px;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: skyblue;
+}
+
+/* Toggle Button Styling */
+.toggle-btn {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+}
+
+.toggle-btn .bar {
+  width: 30px;
+  height: 4px;
+  background-color: #fff;
+  margin: 5px 0;
+}
+
+/* Responsive Styles for Mobile */
+@media screen and (max-width: 768px) {
+  /* Change navbar items to a column layout when menu is open */
+  .nav-links {
+    position: absolute;
+    top: 60px;  /* Adjust top to avoid overlap */
+    right: 0;
+    background-color: #dd2020;
+    width: 100%;
+    height: 100vh;
+    flex-direction: column;  /* Change from row to column */
+    justify-content: center;
+    align-items: center;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 1000;
+  }
+
+  .nav-links.open {
+    transform: translateX(0);
+  }
+
+  .nav-links li {
+    margin: 20px 0; /* Vertical spacing between items */
+  }
+
+  /* Display Toggle Button on Smaller Screens */
+  .toggle-btn {
+    display: flex;
+  }
+}
+
+/* Add padding to the body or main content to prevent overlap */
+body {
+  padding-top: 10px; /* This ensures content doesn't go under the navbar */
+}
