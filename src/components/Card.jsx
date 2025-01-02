@@ -55,7 +55,7 @@ const Card = ({ category }) => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    let url = `https://newsapi.org/v2/top-headlines?country=us&category=${category}&apiKey='c23468b67fc845108a0b51806bd4f7f3'`;
+    let url = `https://newsapi.org/v2/top-headlines?country=us&category=${category}&apiKey=c23468b67fc845108a0b51806bd4f7f3`;
 
     setLoading(true); // Start loading when the request begins
     setError(null); // Reset error before making the new request
